@@ -16,5 +16,24 @@ namespace P04
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label1.Text = comboBox1.SelectedItem.ToString();
+            int mocnina = Convert.ToInt32(comboBox1.SelectedItem), vysledek = 1, cislo;
+            foreach(Control ctrl in panel1.Controls)
+            {
+                if(ctrl is TextBox)
+                {
+                    vysledek = 1;
+                    cislo = Convert.ToInt32(ctrl.Text);
+                    for(int i = 1; i <= mocnina; i++)
+                    {
+                        vysledek *= cislo;
+                    }
+                    ctrl.Text = vysledek.ToString();
+                }
+            }
+        }
     }
 }
