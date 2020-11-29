@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace P01
+namespace P001
 {
     public partial class Form1 : Form
     {
@@ -21,25 +21,28 @@ namespace P01
         {
             string abeceda = "QWERTZUIOPASDFGHJKLYXCVBNM .,!?";
             int counting = 0;
-            foreach(Control ctrl in panel1.Controls)
+            foreach (Control ctrl in panel1.Controls)
             {
                 if (ctrl is Button) (ctrl as Button).Text = abeceda[counting].ToString();
-                counting++;
+                {
+                    counting++;
+                }
+                
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             string msg = " ";
-            foreach(char pis in textBox1.Text)
+            foreach (char wr in textBox1.Text)
             {
-                if(pis != ' ' && pis != '!' && pis != '?' && pis != ',' && pis!= '.')
+                if (wr != '!' && wr != '?' && wr != '.' && wr != ',' && wr != ' ')
                 {
-                    msg = msg + (char)(pis + 3);
+                    msg = msg + (char)(wr + 3);
                 }
                 else
                 {
-                    msg = msg + pis;
+                    msg = msg + wr;
                 }
 
             }
